@@ -3,6 +3,7 @@ package com.news;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.github.wumke.RNExitApp.RNExitAppPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;

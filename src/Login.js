@@ -5,6 +5,7 @@ import RNExitApp from 'react-native-exit-app';
 import {goToMain} from './Navigate'
 import AsyncStorage from '@react-native-community/async-storage';
 import {USER_KEY} from './config';
+import SplashScreen from 'react-native-splash-screen';
 export default class Login extends Component<Props> {
 
 constructor(props){
@@ -27,7 +28,7 @@ console.log('error async')
 
 
 componentDidMount(){
-    // splash screen hide
+   SplashScreen.hide();
 }
     render() {
         return (
