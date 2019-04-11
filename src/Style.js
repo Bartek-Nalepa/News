@@ -17,4 +17,16 @@ export const styles = StyleSheet.create({
         color: '#333333',
         marginBottom: 5,
     },
+    TouchableOpacityDeclaration:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 80,
+        height: 50,
+        borderRadius: 50,
+        backgroundColor: '#b3b3ff',
+    },
+    TextInDeclaration:{
+        marginBottom: 4,
+        fontSize: 16
+    }
 });

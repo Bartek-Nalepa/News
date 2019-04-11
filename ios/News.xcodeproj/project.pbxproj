@@ -42,6 +42,8 @@
 		D2F7FEC5838740EFBDAEC1A0 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0354654266740B2A696B900 /* libRNReanimated.a */; };
 		7DA402A52BDE4211B711597B /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99456D0B44E54E099D8C6AB1 /* libRNGestureHandler.a */; };
 		C42C40FE9CB94FC887943731 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 827E1A87DC00477EAE294BAA /* libRNGestureHandler-tvOS.a */; };
+		CEA2DFE936DA45878D528E0C /* libRNExitApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2F92763B954356B5AD2290 /* libRNExitApp.a */; };
+		460DE2B098504BFA86461C3B /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEC25A565DC4CE2BDAD6E7A /* libRNCAsyncStorage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +356,10 @@
 		B005A482CE064FABB810EA2B /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; name = "RNGestureHandler.xcodeproj"; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		99456D0B44E54E099D8C6AB1 /* libRNGestureHandler.a */ = {isa = PBXFileReference; name = "libRNGestureHandler.a"; path = "libRNGestureHandler.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		827E1A87DC00477EAE294BAA /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; name = "libRNGestureHandler-tvOS.a"; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6A1E3FE9549146B3BBEFBD70 /* RNExitApp.xcodeproj */ = {isa = PBXFileReference; name = "RNExitApp.xcodeproj"; path = "../node_modules/react-native-exit-app/ios/RNExitApp.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		AC2F92763B954356B5AD2290 /* libRNExitApp.a */ = {isa = PBXFileReference; name = "libRNExitApp.a"; path = "libRNExitApp.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		57BD54BF051E405C85F48D40 /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; name = "RNCAsyncStorage.xcodeproj"; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		0AEC25A565DC4CE2BDAD6E7A /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; name = "libRNCAsyncStorage.a"; path = "libRNCAsyncStorage.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +390,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				D2F7FEC5838740EFBDAEC1A0 /* libRNReanimated.a in Frameworks */,
 				7DA402A52BDE4211B711597B /* libRNGestureHandler.a in Frameworks */,
+				CEA2DFE936DA45878D528E0C /* libRNExitApp.a in Frameworks */,
+				460DE2B098504BFA86461C3B /* libRNCAsyncStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +584,8 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				BA95B71D38D44C14931CCA86 /* RNReanimated.xcodeproj */,
 				B005A482CE064FABB810EA2B /* RNGestureHandler.xcodeproj */,
+				6A1E3FE9549146B3BBEFBD70 /* RNExitApp.xcodeproj */,
+				57BD54BF051E405C85F48D40 /* RNCAsyncStorage.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1206,11 +1216,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Debug;
@@ -1235,11 +1248,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Release;
@@ -1264,6 +1280,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Debug;
@@ -1287,6 +1304,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Release;
@@ -1319,11 +1337,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Debug;
@@ -1356,11 +1377,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Release;
@@ -1392,11 +1416,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Debug;
@@ -1428,11 +1455,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
+					"$(SRCROOT)\..\node_modules\@react-native-community\async-storage\ios",
 				);
 			};
 			name = Release;
