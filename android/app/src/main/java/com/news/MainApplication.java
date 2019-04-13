@@ -42,7 +42,8 @@ public class MainApplication extends NavigationApplication {
         return Arrays.<ReactPackage>asList(
         new RNGestureHandlerPackage(),
         new RNExitAppPackage(),
-        new AsyncStoragePackage()
+        new AsyncStoragePackage(),
+         new SplashScreenReactPackage()
             // eg. new VectorIconsPackage()
         );
     }
