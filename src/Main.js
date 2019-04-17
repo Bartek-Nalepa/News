@@ -1,5 +1,15 @@
 import React, {Component} from 'react';
-import {Text, TouchableHighlight, FlatList, View, TouchableOpacity, Modal, ScrollView} from 'react-native';
+import {
+    Text,
+    TouchableHighlight,
+    FlatList,
+    View,
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    Modal,
+    ScrollView,
+    ImageBackground
+} from 'react-native';
 import {styles} from './Style'
 import SplashScreen from "react-native-splash-screen";
 
@@ -18,47 +28,45 @@ export default class Main extends Component<Props> {
         }
     }
 
+    description(colour) {
+        return <View style={{width: '100%', justifyContent: 'center'}}>
+            <View>
+                <Text style={{fontSize: 20, color: colour}}>Title</Text>
+                <Text style={{color: colour}}>Urem politum merge despacito</Text>
+            </View>
+        </View>
+    }
+
     renderItem = ({item, index}) => {
         if (item.priority === 'high') {
             return (
-                <TouchableHighlight style={styles.listPrioHigh} onPress={() => {
+                <TouchableOpacity style={styles.listPrioHigh} onPress={() => {
+                    this.setState({modalVisible: true})}}>
+                    <ImageBackground
+                        style={styles.fullImage}
+                        source={require('../assets/images/minions.jpg')}>
+                        {this.description('white')}
+                    </ImageBackground>
+                </TouchableOpacity>
+            )
+        } else if (item.priority === 'med') {
+            return (
+                <TouchableOpacity style={styles.listPrioMed} onPress={() => {
                     this.setState({modalVisible: true})
                 }}>
-                    <View style={{width: '100%', justifyContent: 'center'}}>
-                        <View style={{backgroundColor: 'onyx'}}>
-                            <Text style={{fontSize: 20,}}>Title</Text>
-                            <Text>Urem politum merge despacito</Text>
-                        </View>
-                    </View>
-
-                </TouchableHighlight>
+                    <ImageBackground
+                        style={styles.imageMed}
+                    source={require('../assets/images/minions.jpg')}
+                    />
+                    {this.description()}
+                </TouchableOpacity>
             )
-        }
-        // else if (item.priority === 'med') {
-        //     return (
-        //         <View>
-        //         <TouchableHighlight style={styles.listPrioMed} onPress={() => {
-        //             this.setState({modalVisible: true})}}>
-        //             <TouchableOpacity >
-        //                 <Text>uuuj</Text>
-        //             </TouchableOpacity>
-        //             <View>
-        //
-        //             </View>
-        //
-        //         </TouchableHighlight>
-        //         </View>
-        //     )
-        // }
-        else {
+        } else {
             return (
                 <TouchableHighlight style={styles.listPrioLow} onPress={() => {
                     this.setState({modalVisible: true})
                 }}>
-                    <View style={{width: '100%', backgroundColor: 'red'}}>
-                        <Text style={{fontSize: 20}}>Title</Text>
-                        <Text>Urem politum merge despacito</Text>
-                    </View>
+                    {this.description()}
                 </TouchableHighlight>
             )
         }
@@ -87,9 +95,12 @@ export default class Main extends Component<Props> {
                         </ScrollView>
                     </View>
                 </Modal>
+
+
                 <FlatList
                     data={this.state.fooArr}
                     extraData={this.state}
+
                     renderItem={this.renderItem}
                 />
             </View>

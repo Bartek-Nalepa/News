@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#f2f2f2',
     },
     welcome: {
         fontSize: 20,
@@ -30,30 +30,36 @@ export const styles = StyleSheet.create({
         fontSize: 16
     },
     listPrioLow: {
-        width: '97%',
+        width: '90%',
         marginLeft: 7,
         marginRight: 7,
         marginBottom: 10,
         height: 100,
-        flexDirection: 'row',
-        backgroundColor: 'green'
+        backgroundColor: 'white'
     },
     listPrioMed: {
-        width: '97%',
+        width: '80%',
         marginLeft: 7,
         marginRight: 7,
         marginBottom: 10,
         height: 100,
         flexDirection: 'row',
-        backgroundColor: 'yellow'
+        backgroundColor: 'white'
     },
     listPrioHigh: {
         flex: 1,
-        marginLeft: 7,
-        marginRight: 7,
         marginBottom: 10,
         height: 150,
-        flexDirection: 'row',
-        backgroundColor: 'yellow'
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    fullImage: {
+        width: '100%',
+        height: 150,
+        justifyContent: 'flex-end'
+    },
+    imageMed: {
+        height: 100,
+        width: 150,
     },
 });
