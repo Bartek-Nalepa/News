@@ -30,20 +30,20 @@ export const styles = StyleSheet.create({
         fontSize: 16
     },
     listPrioLow: {
-        width: '90%',
+        flex: 1,
         marginLeft: 7,
-        marginRight: 7,
         marginBottom: 10,
+        justifyContent: 'center',
         height: 100,
         backgroundColor: 'white'
     },
     listPrioMed: {
-        width: '80%',
-        marginLeft: 7,
-        marginRight: 7,
+        flex: 1,
         marginBottom: 10,
         height: 100,
-        flexDirection: 'row',
+        justifyContent: 'center',
+        // flexDirection: 'row',
+        flexWrap: 'wrap',
         backgroundColor: 'white'
     },
     listPrioHigh: {
@@ -55,11 +55,31 @@ export const styles = StyleSheet.create({
     },
     fullImage: {
         width: '100%',
+        height: 300,
+        justifyContent: 'flex-end'
+    },
+    imageHigh:{
+        width: '100%',
         height: 150,
         justifyContent: 'flex-end'
     },
     imageMed: {
         height: 100,
-        width: 150,
+        width: '25%'
+    },
+    textTitle: {
+        marginTop: 5,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+    textDescription: {
+        marginTop: 5,
+        textAlign: 'left',
+        fontSize: 17,
+    },
+    textPublished: {
+        fontSize: 14,
+        textAlign: 'right',
     },
 });
