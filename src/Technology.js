@@ -12,17 +12,14 @@ import {
     ImageBackground
 } from 'react-native';
 import {styles} from './Style'
-import SplashScreen from "react-native-splash-screen";
 
-
-export default class Main extends Component<Props> {
-
+export default class Technology extends Component<Props> {
     constructor(props) {
         super(props);
         this.state = {
             articles: [],
+            category: 'technology',
             modalVisible: false,
-            category: 'news',
             article: [],
             refreshing: false,
         }
@@ -32,6 +29,7 @@ export default class Main extends Component<Props> {
         try {
             const response = await fetch(`http://192.168.1.5:3000/api/articles/category/${this.state.category}`);
             const json = await response.json();
+            console.log(json);
             this.setState({articles: json})
         } catch (error) {
             console.log(error)
@@ -39,9 +37,16 @@ export default class Main extends Component<Props> {
     };
 
     componentDidMount() {
-        SplashScreen.hide();
         this.fetchData()
             .catch(err => console.log(err))
+    }
+
+    description(item, colour,) {
+        return <View style={{justifyContent: 'center'}}>
+            <View style={{width: "95%"}}>
+                <Text style={{fontSize: 18, color: colour}}>{`${item.title.slice(0, 75)}`}...</Text>
+            </View>
+        </View>
     }
 
     renderItem = ({item, index}) => {
@@ -81,21 +86,6 @@ export default class Main extends Component<Props> {
         }
     };
 
-    description(item, colour,) {
-        return <View style={{justifyContent: 'center'}}>
-            <View style={{width: "95%"}}>
-                <Text style={{fontSize: 18, color: colour}}>{`${item.title.slice(0, 75)}`}...</Text>
-            </View>
-        </View>
-    }
-
-    _onRefresh = () => {
-        this.setState({refreshing: true});
-        this.fetchData().then(() => {
-            this.setState({refreshing: false});
-        });
-    };
-
     renderModal = (article) => {
         const json = new Date(article.published);
         const published = `${json.getFullYear()}/${json.getMonth()+1}/${json.getDate()+1}`;
@@ -106,9 +96,9 @@ export default class Main extends Component<Props> {
                     onRefresh={this._onRefresh}/>
             }>
             <View>
-            <Image
-                style={styles.fullImage}
-                source={{uri: article.image}}/>
+                <Image
+                    style={styles.fullImage}
+                    source={{uri: article.image}}/>
                 <Text style={styles.textTitle}>{article.title}</Text>
                 <Text style={styles.textDescription}>{article.description}</Text>
             </View>
@@ -119,10 +109,10 @@ export default class Main extends Component<Props> {
         </ScrollView>
 
     };
-
     render() {
+
         return (
-            <View style={styles.container}>
+            <View>
                 <Modal
                     animationType="slide"
                     transparent={false}
@@ -132,13 +122,11 @@ export default class Main extends Component<Props> {
                     }}>
                     {this.renderModal(this.state.article)}
                 </Modal>
-
                 <FlatList
                     data={this.state.articles}
                     extraData={this.state}
-                    renderItem={this.renderItem}
-                />
+                    renderItem={this.renderItem}/>
             </View>
-        );
+        )
     }
 }

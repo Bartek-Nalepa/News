@@ -19,12 +19,12 @@ export const goToMain = () => Navigation.setRoot({
                         },
                         {
                             component: {
-                                name: 'PrivacyAndPolicy',
+                                name: 'Technology',
                                 options: {
                                     bottomTab: {
-                                        text: 'Sign Up',
+                                        text: 'Technology',
                                         fontSize: 12,
-                                        icon: require('../assets/images/signup.png')
+                                        icon: require('../assets/images/ic_technology.png')
                                     }
                                 }
                             },
