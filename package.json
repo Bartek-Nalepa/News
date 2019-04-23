@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "test": "jest"
   },
@@ -16,7 +15,9 @@
     "react-native-gesture-handler": "^1.1.0",
     "react-native-navigation": "^2.17.0",
     "react-native-reanimated": "^1.0.0",
-    "react-native-splash-screen": "^3.0.6"
+    "react-native-splash-screen": "^3.0.6",
+    "react-native-sqlite-storage": "^3.3.10",
+    "react-native-swipe-gestures": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",

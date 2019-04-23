@@ -12,6 +12,7 @@ import {
     ImageBackground
 } from 'react-native';
 import {styles} from './Style'
+import GestureRecognizer, {swipeDirections} from "react-native-swipe-gestures";
 
 export default class Technology extends Component<Props> {
     constructor(props) {
@@ -22,6 +23,8 @@ export default class Technology extends Component<Props> {
             modalVisible: false,
             article: [],
             refreshing: false,
+            index: 0,
+            gestureName: '',
         }
     }
 
@@ -30,7 +33,7 @@ export default class Technology extends Component<Props> {
             const response = await fetch(`http://192.168.1.5:3000/api/articles/category/${this.state.category}`);
             const json = await response.json();
             console.log(json);
-            this.setState({articles: json})
+            this.setState({articles: json.reverse()});
         } catch (error) {
             console.log(error)
         }
@@ -109,10 +112,30 @@ export default class Technology extends Component<Props> {
         </ScrollView>
 
     };
+
+    onSwipeArticle(gestureName, gestureState) {
+        const {SWIPE_LEFT, SWIPE_RIGHT,} = swipeDirections;
+        this.setState({gestureName: gestureName});
+        switch (gestureName) {
+            case SWIPE_RIGHT:
+                if (this.state.index === 0) console.log('first');
+                else this.setState({article: this.state.articles[this.state.index - 1], index: this.state.index - 1});
+                break;
+            case SWIPE_LEFT:
+                if (this.state.index === this.state.articles.length - 1) console.log('first');
+                else this.setState({article: this.state.articles[this.state.index + 1], index: this.state.index + 1});
+                break;
+
+        }
+    }
+
     render() {
 
         return (
-            <View>
+            <GestureRecognizer onSwipe={(direction, state) => {
+                if (this.state.modalVisible) this.onSwipeArticle(direction, state)
+            }}
+                               style={styles.container}>
                 <Modal
                     animationType="slide"
                     transparent={false}
@@ -126,7 +149,7 @@ export default class Technology extends Component<Props> {
                     data={this.state.articles}
                     extraData={this.state}
                     renderItem={this.renderItem}/>
-            </View>
+            </GestureRecognizer>
         )
     }
 }

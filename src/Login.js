@@ -6,7 +6,10 @@ import {goToMain} from './Navigate'
 import AsyncStorage from '@react-native-community/async-storage';
 import {USER_KEY} from './config';
 import SplashScreen from 'react-native-splash-screen';
+// var SQLite = require('react-native-sqlite-storage');
+// var db = SQLite.openDatabase({name: 'DataBase.db', createFromLocation: 1});
 export default class Login extends Component<Props> {
+
 
 constructor(props){
     super(props);
@@ -17,18 +20,21 @@ constructor(props){
 
 storeData = async () => {
   try {
-      console.log('1async');
       await AsyncStorage.setItem(USER_KEY, 'accepted');
-      console.log('2sync');
       goToMain();
   } catch (error){
 console.log('error async')
   }
 };
 
+    // createTableDataBase() {
+    //     const query = 'CREATE TABLE `articles` ( `json` TEXT )';
+    //     db.executeSql(query);
+    // }
 
 componentDidMount(){
-   SplashScreen.hide();
+    SplashScreen.hide();
+    // this.createTableDataBase();
 }
     render() {
         return (

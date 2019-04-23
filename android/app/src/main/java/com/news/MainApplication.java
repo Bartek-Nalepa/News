@@ -1,7 +1,7 @@
 package com.news;
 
 import android.app.Application;
-
+import org.pgsqlite.SQLitePluginPackage;
 import com.facebook.react.ReactApplication;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -41,6 +41,8 @@ public class MainApplication extends NavigationApplication {
         // No need to add RnnPackage and MainReactPackage
         return Arrays.<ReactPackage>asList(
         new RNGestureHandlerPackage(),
+         new SQLitePluginPackage(),
+          new MainReactPackage(),
         new RNExitAppPackage(),
         new AsyncStoragePackage(),
          new SplashScreenReactPackage()
